@@ -1,12 +1,10 @@
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.coupon.android.application) // 이 설정을 위해서는 App 단에 classPath 설정에서 hilt 사용을 해 줘야 된다.
 }
 
 android {
     namespace = "com.alphablue.stampcoupon"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.alphablue.stampcoupon"
