@@ -1,4 +1,5 @@
 import com.alphablue.convention.configureKotlinAndroid
+import com.alphablue.convention.libs
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -13,20 +14,12 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.android.application")
-                apply("com.google.dagger.hilt.android")
                 apply("org.jetbrains.kotlin.android")
-                apply("org.jetbrains.kotlin.kapt")
             }
 
             extensions.configure<BaseAppModuleExtension> {
                 configureKotlinAndroid(commonExtension = this)
-            }
-
-            val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-            dependencies {
-                // findLibrary 는 toml에 정의된 라이브러리 정보를 가져 온다. ( .. - ... ) 과 같이 -(dash) 로 구분됨
-                add("implementation", libs.findLibrary("hilt.android").get())
-                add("kapt", libs.findLibrary("hilt.compiler").get())
+                defaultConfig.targetSdk = 34
             }
 
             val kaptExtension = extensions.getByType<KaptExtension>()

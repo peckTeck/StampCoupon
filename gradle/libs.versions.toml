@@ -40,4 +40,3 @@ coupon-android-application = { id = "coupon.android.application", version = "uns
 coupon-android-library = { id = "coupon.android.library", version = "unspecified"}
 
 [bundles]
-
