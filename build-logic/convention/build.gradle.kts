@@ -5,8 +5,8 @@ plugins {
 group = "com.alphablue.convention.buildlogic"
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 dependencies {
@@ -16,9 +16,14 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("couponAndroidApplication") {
+        register("androidApplication") {
             id = "coupon.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
+        }
+
+        register("androidLibrary") {
+            id = "coupon.android.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
         }
     }
 }

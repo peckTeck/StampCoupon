@@ -21,11 +21,6 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 configureKotlinAndroid(commonExtension = this)
                 defaultConfig.targetSdk = 34
             }
-
-            val kaptExtension = extensions.getByType<KaptExtension>()
-            kaptExtension.apply {
-                correctErrorTypes = true
-            }
         }
     }
 }

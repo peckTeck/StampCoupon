@@ -1,5 +1,5 @@
 [versions]
-agp = "8.2.2"
+agp = "8.3.1"
 kotlin = "1.9.20"
 core-ktx = "1.12.0"
 junit = "4.13.2"
@@ -9,6 +9,10 @@ appcompat = "1.6.1"
 material = "1.11.0"
 org-jetbrains-kotlin-jvm = "1.9.22"
 hilt = "2.51"
+
+# 컴포즈 관련
+androidxComposeCompiler = "1.5.11"  # https://developer.android.com/jetpack/androidx/releases/compose-compiler
+androidxComposeBom = "2024.03.00" # https://developer.android.com/jetpack/compose/bom/bom-mapping
 
 [libraries]
 # gradle 관련 세팅
@@ -26,6 +30,13 @@ material = { group = "com.google.android.material", name = "material", version.r
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt"}
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt"}
 hilt-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
+
+# compose 관련
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
+
+## bom 설정이 되어 있으면 아래 내용을 자동으로 받아줌
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 
 
 [plugins]

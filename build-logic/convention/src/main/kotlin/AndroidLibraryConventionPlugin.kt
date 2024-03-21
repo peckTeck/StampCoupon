@@ -1,7 +1,8 @@
 import com.alphablue.convention.configureKotlinAndroid
-import com.android.build.api.dsl.LibraryExtension
+import com.android.build.gradle.LibraryExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.internal.impldep.com.jcraft.jsch.ConfigRepository.defaultConfig
 import org.gradle.kotlin.dsl.configure
 
 class AndroidLibraryConventionPlugin: Plugin<Project> {
@@ -15,10 +16,8 @@ class AndroidLibraryConventionPlugin: Plugin<Project> {
             extensions.configure<LibraryExtension>{
                 configureKotlinAndroid(this)
                 defaultConfig.targetSdk = 34
+                testOptions.animationsDisabled = true
             }
-
-
         }
     }
-
 }
