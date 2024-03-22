@@ -1,15 +1,13 @@
 plugins {
-    alias(libs.plugins.coupon.android.application) // 이 설정을 위해서는 Project 단에 classPath 설정에서 hilt 사용을 해 줘야 된다.
+    alias(libs.plugins.coupon.android.application)
+    alias(libs.plugins.coupon.android.application.compose)
 }
 
 android {
     namespace = "com.alphablue.stampcoupon"
-    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.alphablue.stampcoupon"
-        minSdk = 24
-        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -25,9 +23,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }
 
